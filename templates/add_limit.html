@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mt-4">💰 Set Your Expense Limits</h2>
+
+    <!-- Limit Form -->
+    <div class="card shadow p-4 mt-3">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="category" class="form-label">Select Category:</label>
+                <select name="category" class="form-select" required>
+                    <option value="Party">🎉 Party</option>
+                    <option value="Shopping">🛍 Shopping</option>
+                    <option value="Food">🍕 Food</option>
+                    <option value="Travel">✈ Travel</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="amount" class="form-label">Limit Amount (₹):</label>
+                <input type="number" name="amount" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Set Limit</button>
+        </form>
+    </div>
+
+    <!-- Current Limits -->
+    {% if limits %}
+    <h3 class="mt-4 text-center">📊 Your Set Limits</h3>
+    <div class="table-responsive">
+        <table class="table table-striped mt-3 shadow">
+            <thead class="table-dark">
+                <tr>
+                    <th>Category</th>
+                    <th>Limit Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for limit in limits %}
+                <tr>
+                    <td>{{ limit.category }}</td>
+                    <td>₹{{ limit.amount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Custom CSS for Beauty -->
+<style>
+    .container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .card {
+        border-radius: 10px;
+    }
+    h2, h3 {
+        color: #2c3e50;
+        font-weight: bold;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+{% endblock %}

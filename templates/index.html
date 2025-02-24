@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+       #video{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+       }
+       #main{
+        position: absolute;
+        top:0%;
+        left: 0%;
+        background-color: rgba(58, 55, 55, 0.4);
+        height: 100%;
+        width: 100%;
+        /* z-index: 3; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+       #img1{
+        width:30%;
+        height: 50%;
+       }
+       #main h1{
+        color: aliceblue;
+       }
+       button{
+        background-color: black;
+        /* color: aliceblue; */
+        height: 8vh;
+        width: fit-content;
+        border-radius: 20px;
+        padding: 0px 15px;
+        border: 0.8px solid lightgrey;
+       }
+       button a{
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 3.5vh;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+       }
+    </style>
+    
+</head>
+<body>
+    <video id="video" autoplay loop muted src="{{ url_for('static', filename = 'video.mp4' ) }}"></video>
+    <div id="main">
+        <img src="{{ url_for('static', filename = 'mainlogo22.png' ) }}" alt="" id="img1">
+        <div>
+            <h1> Start your Financial Journey with BudgetBuddy </h1>
+        </div>
+        <button><a href="{{ url_for('home') }}">Get Started</a></button>
+        
+
+    </div>
+   
+</body>
+</html>

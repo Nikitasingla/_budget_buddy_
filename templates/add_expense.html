@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mt-4">💸 Add New Expense</h2>
+
+    <div class="card shadow p-4 mt-3">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount (₹):</label>
+                <input type="number" name="amount" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">Expense Category:</label>
+                <select name="category" class="form-select" required>
+                    <option value="Food">🍔 Food</option>
+                    <option value="Transport">🚗 Transport</option>
+                    <option value="Shopping">🛍 Shopping</option>
+                    <option value="Entertainment">🎬 Entertainment</option>
+                    <option value="Bills">💡 Bills</option>
+                    <option value="Health">🏥 Health</option>
+                    <option value="Education">📚 Education</option>
+                    <option value="Travel">✈ Travel</option>
+                    <option value="Party">🎉 Party</option>
+                    <option value="Other">❓ Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" name="description" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Add Expense</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .card {
+        border-radius: 10px;
+    }
+    h2 {
+        color: #2c3e50;
+        font-weight: bold;
+    }
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+    }
+</style>
+
+{% endblock %}

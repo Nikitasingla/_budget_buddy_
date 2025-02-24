@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/8f19d79027.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      #maindiv {
+        background-image: url(../static/bg.jpg);
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+      }
+
+      #maindiv > header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 12vh;
+        border-bottom: 1px solid navy;
+      }
+
+      #div2 {
+        display: flex;
+        flex-direction: row;
+        height: 9.5vh;
+        align-items: end;
+        /* padding-left: 40vw; */
+        gap: 5vw;
+        justify-content: end;
+        width: 73vw;
+        /* border: 1px solid black; */
+      }
+
+      #div2 a {
+        color: black;
+        text-decoration: none;
+        font-size: 3vh;
+      }
+
+      #maindiv > header img {
+        height: 14vh;
+        /* border: 1px solid black; */
+      }
+
+      #div3 {
+        display: flex;
+        flex-direction: row;
+        height: 10.5vh;
+        align-items: end;
+        padding-right: 4vw;
+      }
+
+      #div3 button {
+        width: 8vw;
+        height: 6vh;
+        border-radius: 20px;
+        border: 1px solid darkorchid;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #div3 a {
+        color: black;
+        font-size: 2.5vh;
+        text-decoration: none;
+      }
+
+      #div2 > nav:hover {
+        border-bottom: 1.8px solid grey;
+      }
+
+      #maindiv1 {
+        padding-top: 13vh;
+        margin-left: 5vw;
+        width: 45vw;
+        margin-top: 4vh;
+      }
+
+      #maindiv1 > h1 {
+        font-size: 9.2vh;
+        font-family: "Libre Baskerville", serif;
+      }
+
+      #maindiv2 {
+        height: max-content;
+      }
+
+      .carousel-inner img {
+        height: 90vh;
+        width: 100vw;
+      }
+
+      #featured {
+        padding: 8vh 4vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 2vw;
+      }
+
+      .features {
+        width: 300px;
+        height: 400px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: white;
+      }
+
+      .features:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .feature-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .features:hover .feature-image img {
+        transform: scale(1.1);
+      }
+      .feature-content {
+        padding: 25px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: transparent;
+      }
+
+      .feature-content h3 {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .feature-content span {
+        color: #6c757d;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .features i {
+        font-size: 5vh;
+      }
+      #maindiv3 {
+        padding: 8vh 4vw;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      #maindiv3 h1 {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 3.5rem;
+        margin-bottom: 5vh;
+        font-family: "Libre Baskerville", serif;
+        position: relative;
+      }
+
+      #maindiv3 h1::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: #63e6be;
+      }
+
+      #steps {
+        display: flex;
+        height: 70vh;
+        gap: 3vw;
+        max-width: 1400px;
+        overflow: scroll;
+        margin: 0 auto;
+      }
+
+      #step1 {
+        width: 20%;
+        height: 70vh;
+        /* overflow: scroll; */
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+      }
+
+      #step1 > div {
+        background: white;
+        border-radius: 15px;
+        padding: 2vh;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      #step1 > div:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      #step1 > div > a {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        font-weight: 600;
+        display: block;
+        padding: 1vh;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        /* text-align: center; */
+      }
+
+      #step1 > div > a:hover {
+        color: #63e6be;
+        transform: scale(1.05);
+      }
+
+      #step2 {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        /* overflow: flow; */
+        /* height: 80vh; */
+        gap: 3vh;
+      }
+
+      .steep {
+        background: white;
+        border-radius: 20px;
+        padding: 3vh 3vw;
+        display: flex;
+        gap: 4vw;
+        align-items: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .steep:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .steeped {
+        flex: 1;
+        padding: 2vh 0;
+      }
+
+      .steeped h4 {
+        color: #63e6be;
+        font-size: 1.2rem;
+        margin-bottom: 1vh;
+        font-weight: 600;
+      }
+
+      .steeped h2 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 2vh;
+        font-family: "Libre Baskerville", serif;
+      }
+
+      .steeped ol {
+        padding-left: 1.5rem;
+        color: #6c757d;
+        line-height: 1.8;
+      }
+
+      .steeped p {
+        color: #6c757d;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .steep img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .steep:hover img {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        #steps {
+          flex-direction: column;
+        }
+
+        #step1,
+        #step2 {
+          width: 100%;
+        }
+
+        #step1 {
+          flex-direction: row;
+          overflow-x: auto;
+          padding: 2vh 0;
+        }
+
+        #step1 > div {
+          min-width: 150px;
+        }
+
+        .steep {
+          flex-direction: column;
+          text-align: center;
+          padding: 4vh 4vw;
+        }
+
+        .steep img {
+          width: 100%;
+          height: 250px;
+          margin-top: 2vh;
+        }
+
+        #maindiv3 h1 {
+          font-size: 2.5rem;
+        }
+      }
+      #maindiv4 {
+        padding-top: 4vh;
+        display: flex;
+        flex-direction: column;
+        gap: 7vh;
+      }
+
+      #maindiv4 h1 {
+        font-size: 8vh;
+        text-align: center;
+      }
+
+      #blogs {
+        display: flex;
+        flex-direction: row;
+        gap: 1.6vw;
+        justify-content: center;
+        /* border: 1px solid black; */
+        height: max-content;
+        width: max-content;
+        margin: auto;
+        border-radius: 20px;
+        /* overflow: hidden;    */
+        /* box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em; */
+        margin-bottom: 7vh;
+      }
+
+      .blogged {
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      #blogs div {
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        height: max-content;
+      }
+
+      #blogs > div:hover iframe {
+        /* height: 60vh; */
+        /* width: 21vw; */
+        transform: scale(1.1);
+      }
+
+      #hamburger {
+        display: none;
+        font-size: 3vh;
+        cursor: pointer;
+      }
+
+      #sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        z-index: 1000;
+      }
+
+      #sidebar a {
+        display: block;
+        padding: 2vh;
+        color: black;
+        text-decoration: none;
+        font-size: 2.5vh;
+        transition: background-color 0.3s ease;
+      }
+
+      #sidebar a:hover {
+        background-color: darkorchid;
+        color: white;
+      }
+
+      .stats-section {
+        display: flex;
+        justify-content: space-around;
+        padding: 5vh 0;
+        background: azure;
+        margin-bottom: 1vh;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat h2 {
+        font-size: 4vh;
+        color: #2c3e50;
+      }
+      #sponsers {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 1vh 1vw;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 3vh;
+      }
+      #sponsered {
+        display: flex;
+        /* justify-content: space-around; */
+        gap:3vw;
+        animation: sponser 15s infinite ease-out;
+      }
+      #sponsered img {
+        height: 6vh;
+        width: 13vw;
+      }
+      @keyframes sponser {
+        0% {
+          transform: translateX(0vw);
+        }
+        /* 50%{
+                transform: translateX(50vw);
+            } */
+        100% {
+          transform: translateX(-70vw);
+        }
+      }
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        padding: 5vh 5vw;
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2vh;
+        max-width: 100vw;
+        padding-right: 2vw;
+        /* overflow: hidden; */
+      }
+
+      .footer-section {
+        flex: 1;
+
+        /* max-width: 25vw; */
+      }
+
+      .footer-section h3 {
+        font-size: 2.5vh;
+        margin-bottom: 2vh;
+        color: #63e6be;
+      }
+
+      .footer-section p {
+        font-size: 1.8vh;
+        line-height: 1.6;
+      }
+
+      .footer-section a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: #63e6be;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1.5vh;
+      }
+
+      .social-icons a {
+        font-size: 3vh;
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #63e6be;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 1vh;
+      }
+
+      .newsletter-form input {
+        padding: 1vh;
+        border: none;
+        border-radius: 5px;
+        flex: 1;
+      }
+
+      .newsletter-form button {
+        padding: 1vh 1vh;
+        /* box-sizing: content-box; */
+        background: #63e6be;
+        border: none;
+        border-radius: 5px;
+        color: #2c3e50;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .newsletter-form button:hover {
+        background: #4ec2a4;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #div2 {
+          display: none;
+        }
+        #div3 > button {
+          display: none;
+        }
+        #div3 > button a,
+        i {
+          display: none;
+        }
+
+        #hamburger {
+          display: block;
+        }
+
+        #sidebar {
+          display: block;
+          /* padding-right: 4vw; */
+        }
+
+        #maindiv1 {
+          width: 90vw;
+          text-align: center;
+        }
+
+        #maindiv1 h1 {
+          font-size: 6vh;
+        }
+
+        .features {
+          width: 80vw;
+          height: auto;
+        }
+
+        #steps {
+          flex-direction: column;
+        }
+
+        #step1,
+        #step2 {
+          width: 100%;
+        }
+
+        .steep {
+          height: fit-content;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .steep img {
+          width: 80vw;
+          height: 45vh;
+        }
+
+        #blogs {
+          /* display: flexbox; */
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .blogged iframe {
+          width: 80vw;
+          height: 50vh;
+        }
+
+        footer {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 508px) {
+        #featured {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="maindiv">
+      <header>
+        <div>
+          <a href="{{ url_for('home' ) }}"
+            ><img src="../static/mainlogo.png" alt=""
+          /></a>
+        </div>
+        <div id="div2">
+          {% if current_user.is_authenticated %}
+          <div class="dropdown">
+            <button class="btn transparent " type="button" data-bs-toggle="dropdown" aria-expanded="false" style="outline: none;border: none;height:5.5vh;font-size: 3.2vh;">
+              Dashboard
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ url_for('add_income' ) }}">Income</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('add_expense' ) }}">Expenses</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('dashboard' ) }}">Insights</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('expense' ) }}">Edit Expense</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('income' ) }}">Edit Income</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('set_limit' ) }}">Set Limit</a></li>
+            </ul>
+          </div>
+
+          <!-- <a href="{{ url_for('profile') }}">Profile</a> -->
+          <a href="{{ url_for('about') }}">About Us</a>
+          {% if current_user.email=="vaibhav@gmail.com" %}
+              <a href="{{ url_for('admin_dashboard' ) }}">Admin</a>
+          {% endif %}
+          <a href="{{ url_for('logout') }}">Logout</a>
+          {% else %}
+          <a href="{{ url_for('about') }}">About Us</a>
+          {% endif %}
+          
+        </div>
+        <div id="div3">
+            {% if current_user.is_authenticated %}
+            <button style="height: fit-content; margin-bottom: 1vh;">
+              <i class="fa-solid fa-user" style="color: #0c0d0d;"></i>
+              <a href="{{ url_for('profile') }}">{{current_user.username}}</a>
+           </button>
+            {% else %}
+              <button>
+                  <i class="fa-solid fa-user" style="color: #0c0d0d;"></i>
+                  <a href="{{ url_for('login') }}">Login</a>
+              </button>
+            {% endif %}
+            
+        </div>
+        <div
+          id="hamburger"
+          style="padding-right: 4vw"
+          onclick="toggleSidebar()"
+        >
+          &#9776;
+        </div>
+      </header>
+      <main>
+        <div id="maindiv1">
+          <h1>
+            The only <br />website that <br />gets your money <br />
+            in shape
+          </h1>
+        </div>
+      </main>
+      <div id="sidebar">
+        <a href="{{ url_for('dashboard' ) }}">Wallet</a>
+        <a href="{{ url_for('about' ) }}">About Us</a>
+        <a href="{{ url_for('logout' ) }}">Log Out</a>
+        <a href="{{ url_for('register' ) }}">Sign In</a>
+      </div>
+    </div>
+    <main id="maindiv2" style="margin-top: 2vh">
+      <div id="carouselExampleIndicators" class="carousel slide" style="height: fit-content;">
+        <div class="carousel-indicators" >
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner" >
+          <div class="carousel-item active" style="height: 75vh;">
+            <img src="https://www.digitalfinancetransformation.com/wp-content/uploads/2022/11/ntt-data-digital-finance-designing-the-finance-function-of-the-future.jpg" alt="..."style="height:75vh;" />
+          </div>
+          <div class="carousel-item" style="height: 75vh;">
+            <img src="https://mutualfund.adityabirlacapital.com/-/media/bsl/images/blog/article%20images/2022/Are-you-still-single_%20Benefit-from-these-personal-finance-tips-INLINE" alt="..." style="height: 75vh;" />
+          </div>
+          <div class="carousel-item" style="height: 75vh;">
+            <img
+              src="https://wallpaperaccess.com/full/732220.jpg"
+              class="d-block w-100"
+              alt="..."
+              style="height: 75vh;"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div id="featured">
+        <div class="features">
+          <div class="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Financial Control"
+            />
+          </div>
+          <div class="feature-content">
+            <h3>Have perfect control</h3>
+            <span>Over all your cash expenses, bank accounts, E-Wallets </span>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Smart Budgets"
+            />
+          </div>
+          <div class="feature-content">
+            <h3>Use our smart budgets</h3>
+            <span
+              >To save money for a new car, dreamy vacation or top
+              university.</span
+            >
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Financial Overview"
+            />
+          </div>
+          <div class="feature-content">
+            <h3>Get a quick overview</h3>
+            <span
+              >About your total incomes and expenses at a glance and in one
+              place.</span
+            >
+          </div>
+        </div>
+      </div>
+      <div id="maindiv3">
+        <h1>How to get your money into shape?</h1>
+        <div id="steps">
+          <div id="step1">
+            <div>
+              <a href="#s11">Step 1:<br />Track Cash</a>
+            </div>
+            <div>
+              <a href="#s12">Step 2:<br />Analyze Habits</a>
+            </div>
+            <div>
+              <a href="#s13">Step 3:<br />Smart Budget</a>
+            </div>
+          </div>
+
+          <div id="step2">
+            <div class="steep" id="s11">
+              <div class="steeped">
+                <h4>Step 1</h4>
+                <h2>Track your cash flow</h2>
+                <p>
+                  Take control of your finances by easily logging your daily
+                  expenses. Our intuitive interface makes expense tracking
+                  simple and efficient, helping you maintain a clear picture of
+                  your spending habits.
+                </p>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                alt="Cash Flow Tracking"
+              />
+            </div>
+
+            <div class="steep" id="s12">
+              <div class="steeped">
+                <h4>Step 2</h4>
+                <h2>Understand your financial habits</h2>
+                <ol>
+                  <li>
+                    Get detailed insights into your income sources and spending
+                    patterns
+                  </li>
+                  <li>Monitor your cash flow with real-time balance updates</li>
+                  <li>Identify areas for improvement and potential savings</li>
+                </ol>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                alt="Financial Analysis"
+              />
+            </div>
+
+            <div class="steep" id="s13">
+              <div class="steeped">
+                <h4>Step 3</h4>
+                <h2>Make your spending stress–free</h2>
+                <ol>
+                  <li>
+                    Create personalized budgets for different spending
+                    categories
+                  </li>
+                  <li>Get daily spending recommendations to stay on track</li>
+                  <li>
+                    Set and achieve your financial goals with smart saving
+                    strategies
+                  </li>
+                </ol>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                alt="Budget Planning"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="maindiv4">
+        <h1>Popular shorts About Finance</h1>
+        <div id="blogs">
+          <div class="blogged">
+            <iframe
+              width="200"
+              height="410"
+              src="https://youtube.com/embed/6Fjs9ZU1f1w?autoplay=0&mute=1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="blogged">
+            <iframe
+              width="200"
+              height="410"
+              src="https://youtube.com/embed/RqEivbzyxcs?autoplay=0&mute=1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="blogged">
+            <iframe
+              width="200"
+              height="410"
+              src="https://youtube.com/embed/-8MU11Ql7j8?autoplay=0&mute=1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="blogged">
+            <iframe
+              width="200"
+              height="410"
+              src="https://youtube.com/embed/2s9m8wVWo-U?autoplay=0&mute=1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="blogged">
+            <iframe
+              width="200"
+              height="410"
+              src="https://youtube.com/embed/Oj-UpJ2STC0?autoplay=0&mute=1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="stats-section">
+        <div class="stat">
+          <h2>10,000+</h2>
+          <p>Happy Users</p>
+        </div>
+        <div class="stat">
+          <h2>$1M+</h2>
+          <p>Saved</p>
+        </div>
+        <div class="stat">
+          <h2>24/7</h2>
+          <p>Support</p>
+        </div>
+      </div>
+      <div id="sponsers">
+        <div id="sponsered">
+          <div>
+            <img
+              src="https://logos-marcas.com/wp-content/uploads/2020/10/Oracle-Logotipo-1995-Presente.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.23ca1af1f2612c7a76480ccc3530ffd7?rik=SlGfdgqYFgtC6w&riu=http%3a%2f%2flogos-download.com%2fwp-content%2fuploads%2f2016%2f10%2fDeloitte_logo.png&ehk=T9wmufrL2gv8XcAMzPlZGs7vZ9t%2fRnycJO0J0u02u1s%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.d4e0a867cdeb656f95e740d3b1cb9c90?rik=GarWs2YsBczpLw&riu=http%3a%2f%2fimage3.mouthshut.com%2fimages%2fimagesp%2f925769446s.jpg&ehk=lLBPWwIFBrpY6mo9EVcP1Uk9wePx91dMYjqcdrfxdvk%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=I4dbPhSe%2fbHHSg&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-google-logo-2015brandlogobrand-logoiconssymbolslogosgoogle-6815229372333mqrr.png&ehk=ewmaCOvP0Ji4QViEJnxSdlrYUrTSTWhi8nZ9XdyCgAI%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.1412cf97c300eccdff3497ce1ca1d940?rik=51Ub1Bjz0Bh03w&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19749.png&ehk=oca1BavUvaPb6pE5FdtOV3Qa%2fRkiL%2foW4ne%2bh3GZrnU%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://logos-marcas.com/wp-content/uploads/2020/10/Oracle-Logotipo-1995-Presente.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.23ca1af1f2612c7a76480ccc3530ffd7?rik=SlGfdgqYFgtC6w&riu=http%3a%2f%2flogos-download.com%2fwp-content%2fuploads%2f2016%2f10%2fDeloitte_logo.png&ehk=T9wmufrL2gv8XcAMzPlZGs7vZ9t%2fRnycJO0J0u02u1s%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.d4e0a867cdeb656f95e740d3b1cb9c90?rik=GarWs2YsBczpLw&riu=http%3a%2f%2fimage3.mouthshut.com%2fimages%2fimagesp%2f925769446s.jpg&ehk=lLBPWwIFBrpY6mo9EVcP1Uk9wePx91dMYjqcdrfxdvk%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=I4dbPhSe%2fbHHSg&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-google-logo-2015brandlogobrand-logoiconssymbolslogosgoogle-6815229372333mqrr.png&ehk=ewmaCOvP0Ji4QViEJnxSdlrYUrTSTWhi8nZ9XdyCgAI%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.1412cf97c300eccdff3497ce1ca1d940?rik=51Ub1Bjz0Bh03w&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19749.png&ehk=oca1BavUvaPb6pE5FdtOV3Qa%2fRkiL%2foW4ne%2bh3GZrnU%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div><div>
+            <img
+              src="https://logos-marcas.com/wp-content/uploads/2020/10/Oracle-Logotipo-1995-Presente.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.23ca1af1f2612c7a76480ccc3530ffd7?rik=SlGfdgqYFgtC6w&riu=http%3a%2f%2flogos-download.com%2fwp-content%2fuploads%2f2016%2f10%2fDeloitte_logo.png&ehk=T9wmufrL2gv8XcAMzPlZGs7vZ9t%2fRnycJO0J0u02u1s%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.d4e0a867cdeb656f95e740d3b1cb9c90?rik=GarWs2YsBczpLw&riu=http%3a%2f%2fimage3.mouthshut.com%2fimages%2fimagesp%2f925769446s.jpg&ehk=lLBPWwIFBrpY6mo9EVcP1Uk9wePx91dMYjqcdrfxdvk%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=I4dbPhSe%2fbHHSg&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-google-logo-2015brandlogobrand-logoiconssymbolslogosgoogle-6815229372333mqrr.png&ehk=ewmaCOvP0Ji4QViEJnxSdlrYUrTSTWhi8nZ9XdyCgAI%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://th.bing.com/th/id/R.1412cf97c300eccdff3497ce1ca1d940?rik=51Ub1Bjz0Bh03w&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19749.png&ehk=oca1BavUvaPb6pE5FdtOV3Qa%2fRkiL%2foW4ne%2bh3GZrnU%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>
+          We are a finance management platform dedicated to helping you take
+          control of your money and achieve your financial goals.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="{{ url_for('home' ) }}">Home</a><br />
+        <a href="{{ url_for('dashboard' ) }}">Wallet</a><br />
+        <!-- <a href="#">Alarms</a><br /> -->
+        <a href="{{ url_for('about' ) }}">About Us</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter for the latest updates and tips.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+      }
+    </script>
+  </body>
+</html>

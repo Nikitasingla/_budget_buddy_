@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Add Income{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h2>Add New Income</h2>
+    <form method="POST" class="income-form">
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" step="0.01" id="amount" name="amount" required>
+        </div>
+        <div class="form-group">
+            <label for="source">Source</label>
+            <select id="source" name="source" required>
+                <option value="">Select Source</option>
+                <option value="Salary">Salary</option>
+                <option value="Business">Business</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Investments">Investments</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <button type="submit" class="btn primary">Add Income</button>
+    </form>
+</div>
+{% endblock %}

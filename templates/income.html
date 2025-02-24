@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+   
+   
+
+    <!-- Action Buttons -->
+    <!-- <div class="actions">
+        <a href="{{ url_for('add_income') }}" class="btn secondary">Add Income</a>
+    </div> -->
+
+
+   
+
+    <!-- Recent Expenses Table -->
+    <div class="expenses-section">
+        <h3>Recent Income</h3>
+        <div class="table-wrapper">
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <!-- <th>Category</th> -->
+                        <!-- <th>Description</th> -->
+                        <th>Amount</th>
+                        <!-- <th>Payment Mode</th> -->
+                        <th>Source</th>
+                        <th>Actions</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for income in incomes %}
+                    <tr>
+                        <td>{{ income.date.strftime('%Y-%m-%d') }}</td>
+                        <td>₹{{ "%.2f"|format(income.amount) }}</td>
+                        <td>{{ income.source }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_income', id=income.id) }}" class="btn-small">Edit</a>
+                            <a href="{{ url_for('delete_income', id=income.id) }}" class="btn-small danger" onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

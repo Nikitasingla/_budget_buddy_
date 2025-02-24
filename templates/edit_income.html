@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Edit Income{% endblock %}
+
+{% block content %}
+<div class="column">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Edit Income</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" >
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount (₹)</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="amount" 
+                                   name="amount" 
+                                   step="0.01" 
+                                   value="{{ income.amount }}" 
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="source" class="form-label">Source</label>
+                            <select class="form-select" id="source" name="source" required>
+                                <option value="Salary" {% if income.source == 'Salary' %}selected{% endif %}>Salary</option>
+                                <option value="Business" {% if income.source == 'Business' %}selected{% endif %}>Business</option>
+                                <option value="Freelance" {% if income.source == 'Freelance' %}selected{% endif %}>Freelance</option>
+                                <option value="Investments" {% if income.source == 'Investments' %}selected{% endif %}>Investments</option>
+                                
+                                <option value="Others" {% if income.source == 'Others' %}selected{% endif %}>Others</option>
+                            </select>
+                        </div>
+
+             
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Update Income</button>
+                            <a href="{{ url_for('income') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+    <style>
+        .card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+}
+    </style>
+{% endblock %}  

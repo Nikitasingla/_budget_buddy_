@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <!-- Profile Card -->
+    <div class="profile-card">
+        <img src="https://th.bing.com/th/id/OIP.Z306v3XdxhOaxBFGfHku7wHaHw?rs=1&pid=ImgDetMain" alt="Profile Picture" class="profile-avatar">
+        <h2>{{ current_user.username }}</h2>
+        <p class="email">{{ current_user.email }}</p>
+        <span class="role">Role: {{ current_user.role.capitalize() }}</span>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-grid">
+        <div class="stat-card income">
+            <h3>Total Income</h3>
+            <p class="amount">₹{{ "%.2f"|format(total_income) if total_income else "0.00" }}</p>
+        </div>
+        <div class="stat-card expenses">
+            <h3>Total Expenses</h3>
+            <p class="amount">₹{{ "%.2f"|format(total_expense) if total_expense else "0.00" }}</p>
+        </div>
+        <div class="stat-card balance">
+            <h3>Balance</h3>
+            <p class="amount">₹{{ "%.2f"|format(total_income - total_expense) if total_income and total_expense else "0.00" }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

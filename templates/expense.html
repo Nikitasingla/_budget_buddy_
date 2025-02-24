@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}edit_expense{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+   
+   
+
+    <!-- Action Buttons -->
+    <!-- <div class="actions">
+        <a href="{{ url_for('add_expense') }}" class="btn primary" >Add Expense</a>
+        <a href="{{ url_for('add_income') }}" class="btn secondary">Add Income</a>
+    </div> -->
+
+    <!-- Recent Expenses Table -->
+    <div class="expenses-section">
+        <h3>Recent Expenses</h3>
+        <div class="table-wrapper">
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Payment Mode</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for expense in expenses %}
+                    <tr>
+                        <td>{{ expense.date.strftime('%Y-%m-%d') }}</td>
+                        <td>{{ expense.category }}</td>
+                        <td>{{ expense.description }}</td>
+                        <td>₹{{ "%.2f"|format(expense.amount) }}</td>
+                        <td>{{ expense.payment_mode }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_expense', id=expense.id) }}" class="btn-small">Edit</a>
+                            <a href="{{ url_for('delete_expense', id=expense.id) }}" class="btn-small danger" onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
